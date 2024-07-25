@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Select DOM Elements
     const addButton = document.getElementById('add-task-btn');
     const taskInput = document.getElementById('task-input');
     const taskList = document.getElementById('task-list');
@@ -6,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load tasks from Local Storage
     function loadTasks() {
         const storedTasks = JSON.parse(localStorage.getItem('tasks') || '[]');
-        storedTasks.forEach(taskText => addTask(taskText, false)); // false to avoid duplicate save
+        storedTasks.forEach(taskText => addTask(taskText, false)); // false to avoid re-saving tasks
     }
 
     // Save tasks to Local Storage
